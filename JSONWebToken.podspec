@@ -28,5 +28,5 @@ Pod::Spec.new do |spec|
   end
 
   spec.preserve_paths = 'Build-Phases/*.sh'
-  spec.script_phase = { :name => 'CommonCrypto', :script => 'sh $SRCROOT/Build-Phases/common-crypto.sh', :execution_position => :before_compile }
+  spec.script_phase = { :name => 'CommonCrypto', :script => 'sh $SRCROOT/JSONWebToken/Build-Phases/common-crypto.sh', :execution_position => :before_compile }
 end
