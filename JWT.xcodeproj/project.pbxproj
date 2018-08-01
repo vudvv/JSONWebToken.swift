@@ -111,8 +111,8 @@
 		CD9B62351C7753EC005D4844 /* JWT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9B62471C7753FB005D4844 /* JWT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8198B6E30BA6B8F8125FA7 /* Pods_JWTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0882E042111B6460012248F /* Build-Phases */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Build-Phases"; sourceTree = "<group>"; };
-		D0882E052111B6A30012248F /* JSONWebToken.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = JSONWebToken.podspec; sourceTree = "<group>"; };
+		D0882E052111B6A30012248F /* JSONWebToken.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = JSONWebToken.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D0882E072111BA9B0012248F /* common-crypto.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "common-crypto.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D0882E052111B6A30012248F /* JSONWebToken.podspec */,
-				D0882E042111B6460012248F /* Build-Phases */,
+				D0882E062111BA9B0012248F /* Build-Phases */,
 				520A711B1C469F440005C709 /* Package.swift */,
 				520A71121C469F010005C709 /* Sources */,
 				279D639E1AD07FFF0024E2BC /* Sources */,
@@ -260,6 +260,14 @@
 				CE8198B6E30BA6B8F8125FA7 /* Pods_JWTTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0882E062111BA9B0012248F /* Build-Phases */ = {
+			isa = PBXGroup;
+			children = (
+				D0882E072111BA9B0012248F /* common-crypto.sh */,
+			);
+			path = "Build-Phases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
