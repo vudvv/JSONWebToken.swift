@@ -112,6 +112,7 @@
 		CD9B62471C7753FB005D4844 /* JWT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8198B6E30BA6B8F8125FA7 /* Pods_JWTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JWTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0882E042111B6460012248F /* Build-Phases */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Build-Phases"; sourceTree = "<group>"; };
+		D0882E052111B6A30012248F /* JSONWebToken.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = JSONWebToken.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +178,7 @@
 		279D63921AD07FFF0024E2BC = {
 			isa = PBXGroup;
 			children = (
+				D0882E052111B6A30012248F /* JSONWebToken.podspec */,
 				D0882E042111B6460012248F /* Build-Phases */,
 				520A711B1C469F440005C709 /* Package.swift */,
 				520A71121C469F010005C709 /* Sources */,

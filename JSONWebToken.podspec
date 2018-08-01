@@ -25,5 +25,5 @@ Pod::Spec.new do |spec|
     }
   end
 
-  spec.preserve_paths = 'CommonCrypto/{shim.h,module.modulemap}'
+  s.script_phase = { :name => 'CommonCrypto', :script => 'sh $SRCROOT/Build-Phases/common-crypto.sh', :execution_position => :before_compile }
 end
