@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
   spec.name = 'JSONWebToken'
-  spec.version = '2.2.0'
+  spec.version = '2.2.1'
   spec.summary = 'Swift library for JSON Web Tokens (JWT).'
   spec.homepage = 'https://github.com/kylef/JSONWebToken.swift'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
-  spec.source = { :git => 'https://github.com/kylef/JSONWebToken.swift.git', :tag => "#{spec.version}" }
-  spec.source_files = 'Sources/JWT/*.swift'
+  spec.source = { :git => 'https://github.com/kylef/JSONWebToken.swift.git' }
+  spec.source_files = 'Sources/JWT/*.swift', 'Build-Phases/common-crypto.sh'
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.9'
   spec.tvos.deployment_target = '9.0'
@@ -14,6 +14,8 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.module_name = 'JWT'
   spec.exclude_files = ['Sources/JWT/HMACCryptoSwift.swift']
+
+  spec.swift_version = '4.0'
 
   if ARGV.include?('lint')
     spec.pod_target_xcconfig = {
@@ -25,5 +27,6 @@ Pod::Spec.new do |spec|
     }
   end
 
-  s.script_phase = { :name => 'CommonCrypto', :script => 'sh $SRCROOT/Build-Phases/common-crypto.sh', :execution_position => :before_compile }
+  spec.preserve_paths = 'Build-Phases/*.sh'
+  spec.script_phase = { :name => 'CommonCrypto', :script => 'sh $SRCROOT/Build-Phases/common-crypto.sh', :execution_position => :before_compile }
 end
