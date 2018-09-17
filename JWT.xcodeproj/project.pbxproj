@@ -300,6 +300,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 279D63B21AD07FFF0024E2BC /* Build configuration list for PBXNativeTarget "JWT-OSX" */;
 			buildPhases = (
+				D0882DFF2111B2CE0012248F /* Run Script: CommonCrypto */,
 				279D63971AD07FFF0024E2BC /* Sources */,
 				279D63981AD07FFF0024E2BC /* Frameworks */,
 				279D63991AD07FFF0024E2BC /* Headers */,
@@ -336,6 +337,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD9B62201C7753D8005D4844 /* Build configuration list for PBXNativeTarget "JWT-iOS" */;
 			buildPhases = (
+				D0882E012111B5C70012248F /* Run Script: CommonCrypto */,
 				CD9B62161C7753D8005D4844 /* Sources */,
 				CD9B621B1C7753D8005D4844 /* Frameworks */,
 				CD9B621D1C7753D8005D4844 /* Headers */,
@@ -354,6 +356,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD9B62321C7753EC005D4844 /* Build configuration list for PBXNativeTarget "JWT-tvOS" */;
 			buildPhases = (
+				D0882E022111B5DC0012248F /* Run Script: CommonCrypto */,
 				CD9B62281C7753EC005D4844 /* Sources */,
 				CD9B622D1C7753EC005D4844 /* Frameworks */,
 				CD9B622F1C7753EC005D4844 /* Headers */,
@@ -372,6 +375,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD9B62441C7753FB005D4844 /* Build configuration list for PBXNativeTarget "JWT-watchOS" */;
 			buildPhases = (
+				D0882E032111B5EE0012248F /* Run Script: CommonCrypto */,
 				CD9B623A1C7753FB005D4844 /* Sources */,
 				CD9B623F1C7753FB005D4844 /* Frameworks */,
 				CD9B62411C7753FB005D4844 /* Headers */,
@@ -463,6 +467,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0882DFF2111B2CE0012248F /* Run Script: CommonCrypto */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: CommonCrypto";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMMON_CRYPTO_DIR=\"${SDKROOT}/usr/include/CommonCrypto\"\nif [ -f \"${COMMON_CRYPTO_DIR}/module.modulemap\" ]\nthen\necho \"CommonCrypto already exists, skipping\"\nelse\n# This if-statement means we will only run the main script if the\n# CommonCrypto.framework directory does not exist because otherwise\n# the rest of the script causes a full recompile for anything\n# where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger\n# the rest of the script to run\nFRAMEWORK_DIR=\"${BUILT_PRODUCTS_DIR}/CommonCrypto.framework\"\n\nif [ -d \"${FRAMEWORK_DIR}\" ]; then\necho \"${FRAMEWORK_DIR} already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${FRAMEWORK_DIR}/Modules\"\necho \"module CommonCrypto [system] {\nheader \\\"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\\\"\nexport *\n}\" >> \"${FRAMEWORK_DIR}/Modules/module.modulemap\"\n\nln -sf \"${SDKROOT}/usr/include/CommonCrypto\" \"${FRAMEWORK_DIR}/Headers\"\nfi\n";
+		};
+		D0882E012111B5C70012248F /* Run Script: CommonCrypto */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: CommonCrypto";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMMON_CRYPTO_DIR=\"${SDKROOT}/usr/include/CommonCrypto\"\nif [ -f \"${COMMON_CRYPTO_DIR}/module.modulemap\" ]\nthen\necho \"CommonCrypto already exists, skipping\"\nelse\n# This if-statement means we will only run the main script if the\n# CommonCrypto.framework directory does not exist because otherwise\n# the rest of the script causes a full recompile for anything\n# where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger\n# the rest of the script to run\nFRAMEWORK_DIR=\"${BUILT_PRODUCTS_DIR}/CommonCrypto.framework\"\n\nif [ -d \"${FRAMEWORK_DIR}\" ]; then\necho \"${FRAMEWORK_DIR} already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${FRAMEWORK_DIR}/Modules\"\necho \"module CommonCrypto [system] {\nheader \\\"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\\\"\nexport *\n}\" >> \"${FRAMEWORK_DIR}/Modules/module.modulemap\"\n\nln -sf \"${SDKROOT}/usr/include/CommonCrypto\" \"${FRAMEWORK_DIR}/Headers\"\nfi\n";
+		};
+		D0882E022111B5DC0012248F /* Run Script: CommonCrypto */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: CommonCrypto";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMMON_CRYPTO_DIR=\"${SDKROOT}/usr/include/CommonCrypto\"\nif [ -f \"${COMMON_CRYPTO_DIR}/module.modulemap\" ]\nthen\necho \"CommonCrypto already exists, skipping\"\nelse\n# This if-statement means we will only run the main script if the\n# CommonCrypto.framework directory does not exist because otherwise\n# the rest of the script causes a full recompile for anything\n# where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger\n# the rest of the script to run\nFRAMEWORK_DIR=\"${BUILT_PRODUCTS_DIR}/CommonCrypto.framework\"\n\nif [ -d \"${FRAMEWORK_DIR}\" ]; then\necho \"${FRAMEWORK_DIR} already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${FRAMEWORK_DIR}/Modules\"\necho \"module CommonCrypto [system] {\nheader \\\"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\\\"\nexport *\n}\" >> \"${FRAMEWORK_DIR}/Modules/module.modulemap\"\n\nln -sf \"${SDKROOT}/usr/include/CommonCrypto\" \"${FRAMEWORK_DIR}/Headers\"\nfi\n";
+		};
+		D0882E032111B5EE0012248F /* Run Script: CommonCrypto */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: CommonCrypto";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMMON_CRYPTO_DIR=\"${SDKROOT}/usr/include/CommonCrypto\"\nif [ -f \"${COMMON_CRYPTO_DIR}/module.modulemap\" ]\nthen\necho \"CommonCrypto already exists, skipping\"\nelse\n# This if-statement means we will only run the main script if the\n# CommonCrypto.framework directory does not exist because otherwise\n# the rest of the script causes a full recompile for anything\n# where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger\n# the rest of the script to run\nFRAMEWORK_DIR=\"${BUILT_PRODUCTS_DIR}/CommonCrypto.framework\"\n\nif [ -d \"${FRAMEWORK_DIR}\" ]; then\necho \"${FRAMEWORK_DIR} already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${FRAMEWORK_DIR}/Modules\"\necho \"module CommonCrypto [system] {\nheader \\\"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\\\"\nexport *\n}\" >> \"${FRAMEWORK_DIR}/Modules/module.modulemap\"\n\nln -sf \"${SDKROOT}/usr/include/CommonCrypto\" \"${FRAMEWORK_DIR}/Headers\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		279D63971AD07FFF0024E2BC /* Sources */ = {
@@ -756,6 +819,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocode.$(PRODUCT_NAME:rfc1034identifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -775,6 +839,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocode.$(PRODUCT_NAME:rfc1034identifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
