@@ -10,12 +10,12 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.9'
   spec.tvos.deployment_target = '9.0'
-  spec.watchos.deployment_target = '2.0'
+  spec.watchos.deployment_target = '3.0'
   spec.requires_arc = true
   spec.module_name = 'JWT'
   spec.exclude_files = ['Sources/JWT/HMACCryptoSwift.swift']
 
-  spec.swift_version = '4.0'
+  spec.swift_version = '4.2'
 
   if ARGV.include?('lint')
     spec.pod_target_xcconfig = {
