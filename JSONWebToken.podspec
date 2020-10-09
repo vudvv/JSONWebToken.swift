@@ -1,22 +1,21 @@
 Pod::Spec.new do |spec|
   spec.name = 'JSONWebToken'
-  spec.version = '2.2.3'
+  spec.version = '2.3'
   spec.summary = 'Swift library for JSON Web Tokens (JWT).'
   spec.homepage = 'https://github.com/kylef/JSONWebToken.swift'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
   spec.source = { :git => 'https://github.com/kylef/JSONWebToken.swift.git' }
   spec.source_files = 'Sources/JWT/*.swift'
-  spec.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.9'
-  spec.tvos.deployment_target = '9.0'
-  spec.watchos.deployment_target = '3.0'
+  spec.ios.deployment_target = '9.0'
+  spec.osx.deployment_target = '10.12'
+  spec.tvos.deployment_target = '12.0'
+  spec.watchos.deployment_target = '4.0'
   spec.requires_arc = true
   spec.module_name = 'JWT'
   spec.exclude_files = ['Sources/JWT/HMACCryptoSwift.swift']
 
   spec.swift_version = '5.0'
-#  spec.swift_versions = ['4.2', '5.0']
 
   if ARGV.include?('lint')
     spec.pod_target_xcconfig = {
